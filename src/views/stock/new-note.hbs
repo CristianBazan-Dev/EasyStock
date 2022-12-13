@@ -1,0 +1,29 @@
+<div class="container-card-product">
+<div class="col-md-4 mx-auto">
+    <div class="card">
+    <div class="card-header">
+        <h3>Nuevo producto</h3>
+    </div>
+    <div class="card-body mb-3">
+        <form action="/stock/new-note" method="POST">
+            <div class="form group">
+                <input type="text" name="category" class="form-control" placeholder="Categoría" autofocus>
+                <input type="text" name="brand" class="form-control" placeholder="Marca" autofocus>
+                <input type="text" name="object" class="form-control" placeholder="Producto" autofocus>
+                <input type="number" name="stock" class="form-control"  placeholder="Stock" autofocus>
+                <input type="number" name="minStock" class="form-control"  placeholder="Mínimo permitido" autofocus>
+                <input type="date" name="dateOff" class="form-control"  placeholder="Vencimiento" >
+            </div>
+            <div class="form-group">
+                <textarea name="description" class="form-control" placeholder="Description"></textarea>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary btn-block" type="submit"> 
+                    Save
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+</div>

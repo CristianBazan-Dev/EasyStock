@@ -1,0 +1,100 @@
+{{!-- <div class="row">
+  <div class="col-md-4 mx-auto">
+    <div class="card mt-5 bg-black text-white rounded">
+      <div class="card-header text-center pt-5">
+        <h1 class="h4 text-white">
+          Account Login
+        </h1>
+      </div>
+      <img
+        class="logo"
+        src="/img/logo.png"
+        alt="Logo"
+      />
+      <div class="card-body">
+        <form action="/auth/signin" method="POST">
+          <div class="mb-3">
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              class="form-control bg-dark text-white"
+              name="email"
+              placeholder="Email"
+              autofocus
+            />
+          </div>
+          <div class="mb-3">
+            <label for="passswore">Password:</label>
+            <input
+              type="password"
+              class="form-control bg-dark text-white"
+              name="password"
+              placeholder="Password"
+            />
+          </div>
+          <button class="btn btn-success btn-block">
+            Signin
+          </button>
+        </form>
+      </div>
+
+      <p class="text-center">Don't Have an Account? <a href="/auth/signup" class="text-info">Register</a></p>
+    </div>
+  </div>
+</div> --}}
+
+<div class="login-card-container">
+    <div class="login-card">
+        <div class="login-card-logo">
+            <img src="/img/logo.png" class="logo" alt="logo">
+        </div>
+        <div class="login-card-header">
+           <h1>Ingresar</h1>
+           <div>Por favor, ingrese su cuenta para utilizar la plataforma</div>
+        </div>
+         <form action="/auth/signin" method="POST" class="login-card-form">
+                <div class="form-item">
+                    <span class="form-item-icon material-symbols-rounded">mail</span>
+                    <input type="text" placeholder="Ingrese su e-mail"  name="email" required autoFocus>
+                </div>
+
+                <div class="form-item">
+                    <span class="form-item-icon material-symbols-rounded">lock</span>
+                    <input type="password" placeholder="Ingrese su contraseña"  name="password" required>
+                </div>
+
+                <div class="form-item-other">
+                    <div class="checkbox">
+                        <input type="checkbox" id="rememberMeCheckbox" checked>
+                        <label for="rememberMeCheckbox">Recordar</label>
+                    </div>
+                    <a href="#">Olvide mi contraseña!</a>
+                </div>
+                <button type="submit">Ingresar</button>
+            </form>
+        
+        <div class="login-card-footer">
+                No tienes una cuenta? <a href="#">Crea una!</a>
+        </div>
+            
+    </div>
+
+    {{!-- <div class="login-card-social">
+                <div>Acceder con otras plataformas</div>
+                <div class="login-card-social-btn">
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" />
+                        </svg>
+                    </a>
+
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-google" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M17.788 5.108a9 9 0 1 0 3.212 6.892h-8" />
+                        </svg>
+                    </a>
+                </div>
+      </div> --}}
+</div>

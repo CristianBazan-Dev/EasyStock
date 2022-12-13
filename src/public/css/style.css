@@ -1,0 +1,356 @@
+@import url("reset.css");
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Poppins:wght@600&display=swap');
+
+
+body{
+   /* font-family: 'Poppins', sans-serif; */
+    min-height: 100vh;   
+    background: #333333 ; 
+    
+    align-items: center; 
+    justify-content: center;   
+}
+
+a{
+    text-decoration: none;
+    color: inherit; 
+}
+
+a:hover{
+    text-decoration: none;
+    color: inherit; 
+}
+
+.bg-black {
+    background: #090909;
+  }
+
+
+
+
+.login-card{
+    width: 450px; 
+    background: rgba(255, 255, 255, .1);
+    padding: 4rem; 
+    border-radius: 10px;
+    position: relative; 
+    margin-left: auto; 
+    margin-right: auto; 
+    top: 2em; 
+}
+
+.login-card::before{
+    content: '';
+    position: absolute; 
+    background: rgba(255,255,255,.15); 
+    inset: 0; 
+    transform: rotate(-6deg);
+    border-radius: 10px; 
+    z-index: -1; 
+}
+
+.login-card-logo{
+    margin-bottom: 2rem; 
+}
+
+.login-card-logo img{
+    width: 100px; 
+}
+
+.login-card-logo,
+.login-card header,
+.login-card-footer{
+    text-align: center; 
+}
+
+.login-card a{
+    text-decoration: none; 
+    color: #35339a; 
+}
+
+.login-card a:hover{
+    text-decoration: underline; 
+}
+
+.login-card-header {
+    margin-bottom: 2rem; 
+}
+
+.login-card-header h1{
+    font-size: 2rem; 
+    font-weight: 600; 
+    margin-bottom: .5rem; 
+}
+
+.login-card-header h1+div{
+    font-size: calc(1rem * .8); 
+    opacity: .8; 
+}
+
+.login-card-form {
+    display: flex; 
+    flex-direction: column; 
+    gap: 1.5rem; 
+}
+
+.login-card-form .form-item{
+    position: relative; 
+}
+
+.login-card-form .form-item .form-item-icon{
+    position: absolute; 
+    top: .82rem; 
+    left: 1.4rem; 
+    font-size: 1.3rem; 
+    opacity: .4; 
+}
+
+.login-card-form .checkbox{
+    display: flex; 
+    align-items: center; 
+    gap: 7px; 
+}
+
+.login-card-form .form-item-other {
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    font-size: calc(1rem * .8);
+    margin-bottom: .5rem; 
+}
+
+.login-card-footer {
+    margin-top: 1.5rem; 
+    font-size: calc(1rem * .8); 
+}
+
+.login-card input[type="text"],
+.login-card input[type="password"],
+.login-card input[type="email"]{
+    border: none; 
+    outline: none; 
+    background: rgba(255,255,255, .3);
+    padding: 1rem 1.5rem;
+    padding-left: calc(1rem * 3.5); 
+    border-radius: 100px; 
+    width: 100%;
+    transition: background .5s; 
+}
+
+
+.login-card input:focus{
+    background: white; 
+}
+
+.login-card input[type="checkbox"]{
+    width: 16px;
+    height: 16px;
+    accent-color: black; 
+}
+
+.login-card-form button{
+    background: black; 
+    color: white; 
+    padding: 1rem; 
+    border-radius: 100px; 
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+    transition: background .5s; 
+}
+
+.login-card button:hover{
+    background-color: rgba(0,0,0, .85); 
+    cursor: pointer; 
+}
+
+.login-card-social{
+    display: flex; 
+    flex-direction: column; 
+    gap: 1.5rem; 
+    text-align: center; 
+    margin-top: 3rem; 
+}
+
+.login-card-social>div{
+    opacity: .8;  
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    font-size: calc(1rem * .8); 
+}
+
+.login-card-social-btn{
+    display: flex; 
+    align-items: center;
+    justify-content: center; 
+    gap: 1rem; 
+}
+
+.login-card-social-btn a{
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    color: black; 
+    width: 50px;
+    height: 50px; 
+    background: rgba(255, 255,255, .6);
+    border-radius: 100px; 
+    transition: all .5s; 
+}
+
+.login-card-social-btn a:hover{
+    background: white; 
+    transform: scale(1.1); 
+}
+
+
+/* responsive */
+@media(max-width: 768px){
+    body{
+        padding: 2rem 0; 
+
+    }
+
+    .login-card{
+        width: 280px; 
+        padding: 2rem; 
+    }
+
+    .table thead{
+        display: none; 
+    }
+
+    .table, 
+    .table tbody, 
+    .table tr,
+    .table td{
+        display: block; 
+        width: 100%;
+    }
+
+    .table tr{
+        margin-bottom: 15px; 
+    }
+
+    .table tbody tr td{
+        text-align: right;
+        padding-left: 50%; 
+        position: relative;  
+    }
+
+    .table td:before{
+        content: attr(data-label); 
+        position: absolute; 
+        left: 0; 
+        width: 50%;
+        padding-left: 15px; 
+        font-weight: 600; 
+        font-size: 14px; 
+        text-align: left; 
+    }
+    
+    .button-container{
+        display: block; 
+    }
+
+    .container-card-product,
+    .container-card-signup{
+        padding-top: auto; 
+    }
+
+    .btn-table-actions button{
+        margin-top: 1.5em; 
+        padding: .3em; 
+    } 
+
+    .th-dateOff{
+        content: 'Venc';
+    }
+
+   
+}
+
+/* Responsive table */
+.table-container{
+    padding: 0 10%;
+    margin: 40px auto 0; 
+}
+
+.heading{
+    font-size: 40px;
+    text-align: center; 
+    color: #f1f1f1; 
+    margin-bottom: 40px; 
+}
+
+.table{
+    width: 100%;
+    border-collapse: collapse; 
+}
+
+.table thead{
+    background-color: #ffffff; 
+      
+}
+
+.table thead tr th{
+    font-size: 14px; 
+    font-weight: medium; 
+    letter-spacing: 0.35px; 
+    color: #000000;
+    opacity: 1; 
+    padding: 12px; 
+    vertical-align: top; 
+    border: 1px solid #000000;; 
+    text-align: center; 
+}
+
+.table tbody tr td{
+    font-size: 14px; 
+    letter-spacing: 0.35px; 
+    font-weight: normal; 
+    color: #090909; 
+    background-color: #ffffff; 
+    padding: 8px; 
+    text-align: center; 
+    border: 1px solid #000000; 
+}
+
+.table .text_open{
+    font-size: 14px; 
+    font-weight: bold; 
+    letter-spacing: 0.35px; 
+    color: #ff1046; 
+}
+
+
+
+.input-table{
+    width: 3.5em; 
+}
+
+/*  */
+
+.button-container{
+    display: flex;
+    justify-content: center; 
+}
+
+.button-container button{
+    margin-left: .3em; 
+}
+
+/* Card containers */
+
+.container-card-product,
+.container-card-signup,
+.container-card-edit    {
+    padding-top: 3em; 
+}
+
+
+/* Form */
+
+.form-control {
+    margin-bottom: 5px;  
+}
