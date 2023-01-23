@@ -2,11 +2,19 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Poppins:wght@600&display=swap');
 
+:root{
+    --background: #FF0099;  /* fallback for old browsers */
+    --background-alt: -webkit-linear-gradient(to right, #493240, #FF0099);  /* Chrome 10-25, Safari 5.1-6 */
+    --background-alt2: linear-gradient(to right, #493240, #FF0099); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    --facha-gradient: linear-gradient(to right, #242123, #492B36, #6E3549, #943E5D, #B94870, #DE5283 );
+}
+
+
 
 body{
    /* font-family: 'Poppins', sans-serif; */
     min-height: 100vh;   
-    background: #333333 ; 
+    background: var(--background-alt2) ; 
     
     align-items: center; 
     justify-content: center;   
@@ -259,8 +267,8 @@ a:hover{
     }
 
     .btn-table-actions button{
-        margin-top: 1.5em; 
-        padding: .3em; 
+        margin-top: 1.8em; 
+        padding: .8em; 
     } 
 
     .th-dateOff{
@@ -297,7 +305,6 @@ a:hover{
     font-size: 14px; 
     font-weight: medium; 
     letter-spacing: 0.35px; 
-    color: #000000;
     opacity: 1; 
     padding: 12px; 
     vertical-align: top; 
@@ -337,7 +344,7 @@ a:hover{
 }
 
 .button-container button{
-    margin-left: .3em; 
+    margin-left: 20px
 }
 
 /* Card containers */
@@ -353,4 +360,12 @@ a:hover{
 
 .form-control {
     margin-bottom: 5px;  
+    width: 100%;
+}
+
+.form-group{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }

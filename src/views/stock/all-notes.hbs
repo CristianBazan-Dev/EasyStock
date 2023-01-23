@@ -3,7 +3,7 @@
     <input type="hidden" name="_method" value="PUT">  --}}
 <div class="table-container">
     <h1 class="heading">
-        Inventario
+        Inventory
     </h1>
 
 {{!-- <div class="search-bar">
@@ -52,38 +52,42 @@
     {{!-- <button type="submit" class="btn btn-primary btn-success mb-2">Guardar</button> --}}
 
     {{#if notes}}
-       <button class="btn btn-primary btn-success mb-2 "><a class="dropdown-item" href="/stock/add">Agregar producto</a></button>
+       <button class="btn btn-primary btn-success mb-2 "><a class="dropdown-item" href="/stock/add">Add product</a></button>
     {{/if}}
 
-         {{#each notes}} 
-    <table class="table">
+       <table class="table table-hover table-info table-bordered">
       
-        <thead>
+        <thead class="table-dark">
                 <tr>
-                    <th>Categoría</th>
-                    <th>Marca</th>
-                    <th>Producto</th>
+                    <th>Category</th>
+                    <th>Brand</th>
+                    <th>Product</th>
                     <th>Stock</th>
-                    <th class="th-dateOff">Venc.</th>
-                    <th>Acciones</th>
+                    <th class="th-dateOff">Expiration</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
-   
-        {{table notes}}
-        <tbody>
-              
+
+         {{#each notes}} 
+       <tbody id="t-body" name="t-body">
+                     {{notes}}
             <tr>
              
                 <td  data-label="Categoría">{{category}}</td>
-                <td data-label="Marca">{{brand}}</td>
+                <td data-label="Marca">{{brand}}    </td>
                 <td data-label="Producto">{{object}}</td>
 
                <form action="/notes/save/{{_id}}?_method=PUT" method="POST">
                 <input type="hidden" name="_method" value="PUT"> 
                 <td data-label="Stock">
-                    <input type="number" name="stock" class="input-table" value="{{stock}}">
+                    <input type="number" name="stock" class="input-table" value="{{stock}}" id="stockUpdate" onChange="this.form.submit()">
                 </td>
+                 </form>
 
+                <script>
+               
+                   
+                </script>
                 
            
                 <td data-label="Venc.">{{dateFormat dateOff}}</td>
@@ -92,36 +96,46 @@
                 <td data-label="Acciones" class="btn-table-actions">
                    
                    <div class="button-container">
-                    <button class="btn btn-success btn-block btn-sm " type="submit">Guardar</button>
-                    </form> 
+                   
                     
                     
-                    <button class="btn btn-secondary btn-block btn-sm"><a href="/notes/edit/{{_id}}" >Editar</a></button>
+                    
+                    <button class="btn btn-info btn-block btn-sm"><a href="/notes/edit/{{_id}}" >Edit</a></button>
 
                      <form action="/notes/delete/{{_id}}?_method=DELETE" method="POST">
                         <input type="hidden" name="_method" value="DELETE">
-                        <button class="btn btn-danger btn-block btn-sm" type="submit">Eliminar</button>
+                        <button class="btn btn-danger btn-block btn-sm" type="submit"><i class="fas fa-trash"></i></button>
                     </form>
                    </div>
                         
                 </td>
                 
             </tr>   
-        
-        </tbody>
+                {{else}}
+            <div class="card mx-auto">
+                <div class="card-body">
+                    <h1>Hello {{auth.name}}</h1>
+                    <p class="lead">There's no products yet.</p>
+                    <a href="/stock/add" class="btn btn-success btn-block"> Create an inventory!</a>
+                </div>
+            </div>
+
+             {{/each}}
+        </tbody> 
+
+ 
+       
+    </script>
+
+
+ 
     </table>
+
+
 </form>
 <h4 class="card-title d-flex justify-content-between align-items-center">
           
 </h4> 
-    {{else}}
-    <div class="card mx-auto">
-        <div class="card-body">
-            <h1>Hello {{user.name}}</h1>
-            <p class="lead">No hay ningún producto aun</p>
-            <a href="/stock/add" class="btn btn-success btn-block"> Crea un inventario!</a>
-        </div>
-    </div>
-    {{/each}}
+   
 </div>
 

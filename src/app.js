@@ -33,8 +33,7 @@ const hbs = exphbs.create({
     extname: ".hbs",
     helpers: {
         dateFormat(dt) {if(dt){return dt.toLocaleDateString()}},
-        table(nt) { } 
-    }    
+}
 });
 app.engine(".hbs",hbs.engine);
 app.set("view engine", ".hbs");

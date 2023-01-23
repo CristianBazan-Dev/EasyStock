@@ -1,90 +1,37 @@
-{{!-- <div class="row">
-  <div class="col-md-4 mx-auto">
-    <div class="card bg-black text-white">
-      <div class="card-header pt-5">
-        <h4 class="text-center">
-          Account Register
-        </h4>
-      </div>
-      <div class="card-body">
-        <form action="/auth/signup" method="POST">
-          <div class="mb-3">
-            <label for="name">Name:</label>
-            <input
-              type="text"
-              class="form-control bg-dark text-white"
-              name="name"
-              placeholder="Name"
-              value="{{name}}"
-            />
-          </div>
-          <div class="mb-3">
-            <label for="email">Email:</label>
-            <input
-              type="email"
-              class="form-control bg-dark text-white"
-              name="email"
-              placeholder="Email"
-              value="{{email}}"
-            />
-          </div>
-          <div class="mb-3">
-            <label for="password">Password</label>
-            <input
-              type="password"
-              class="form-control bg-dark text-white"
-              name="password"
-              placeholder="Password"
-              value="{{password}}"
-            />
-          </div>
-          <div class="mb-3">
-            <label for="confirm_password">Cofirm Password:</label>
-            <input
-              type="password"
-              class="form-control bg-dark text-white"
-              name="confirm_password"
-              placeholder="Confirm Password"
-              value="{{confirm_password}}"
-            />
-          </div>
-          <button class="btn btn-success btn-block">
-            Signup
-          </button>
-        </form>
-      </div>
-      <p class="text-center">Already Have an Account?
-        <a href="/auth/signin" class="text-info">Login</a></p>
-    </div>
-  </div>
-</div> --}}
-<div class="container-card-signup">
-<div class="row">
-    <div class="col-md-4 mx-auto">
-        <div class="card">
-            <div class="card-header">
-                Registro
-            </div>
-            <div class="card-body">
-                <form action="/users/signup" method="POST">
-                    <div class="form-grup">
-                        <input type="text" class="form-control" name="name" placeholder="Nombre" value="{{name}}">
-                    </div>
-                    <div class="form-grup">
-                        <input type="email" class="form-control" name="email" placeholder="e-mail" value="{{email}}">
-                    </div>
-                    <div class="form-grup">
-                        <input type="password" class="form-control" name="password" placeholder="Contraseña" value="{{password}}">
-                    </div>
-                    <div class="form-grup">
-                        <input type="password" class="form-control" name="confirm_password" placeholder="Confirme la contraseña" value="{{confirm_password}}">
-                    </div>
-                    <div class="form-group">
-                        <button class="btn btn-primary btn-block" type="submit">Registrate!</button>
-                    </div>
-                </form>
-            </div>
+<div class="login-card-container">
+    <div class="login-card">
+        <div class="login-card-logo">
+            <img src="/img/logo.png" class="logo" alt="logo">
         </div>
+        <div class="login-card-header">
+           <h1>Register</h1>
+        </div>
+         <form action="/auth/signup" method="POST" class="login-card-form" >
+              <div class="form-item">
+                    <span class="form-item-icon material-symbols-rounded">person</span>
+                    <input type="text" placeholder="Name"  name="name" value="{{name}}" required autoFocus>
+                </div>
+
+                <div class="form-item">
+                    <span class="form-item-icon material-symbols-rounded">mail</span>
+                    <input type="text" placeholder="E-mail"  name="email" value="{{email}}"required autoFocus>
+                </div>
+
+                <div class="form-item">
+                    <span class="form-item-icon material-symbols-rounded">lock</span>
+                    <input type="password" placeholder="Password" value="{{password}}" name="password" required>
+                </div>
+
+                     <div class="form-item">
+                    <span class="form-item-icon material-symbols-rounded">lock</span>
+                    <input type="text" placeholder="Re-enter password"  name="confirm_password" value="{{confirm_email}}" required autoFocus>
+                </div>
+                <button type="submit">Register</button>
+            </form>
+        
+        <div class="login-card-footer">
+                Have an account? <a href="#/auth/signin">Sign in!</a>
+        </div>
+            
     </div>
-</div>
 </div>

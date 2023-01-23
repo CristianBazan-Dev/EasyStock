@@ -27,10 +27,10 @@ export const createNewNote = async (req, res) => {
     const { category, brand, object, stock, minStock, dateOff, description } = req.body; 
     const errors = [];
      if(!object){
-         errors.push({text: 'Por favor, escriba el nombre del producto'})
+         errors.push({text: 'Please, write the name of the product.'})
      }
      if(!stock){
-         errors.push({text: 'Por favor, consigne la cantidad en stock'})
+         errors.push({text: 'Please, add a quantity on the stock form'})
      }
  
      if(errors.length > 0){
@@ -52,9 +52,10 @@ export const createNewNote = async (req, res) => {
 export const renderNotes = async (req, res) =>{
     const notes = await Note.find({ user: req.user.id })
         .sort({ date: "desc" })
-        .lean();
-    res.render("stock/all-notes", { notes });
-};      
+        .lean(); 
+    
+    res.render("stock/all-notes", { notes});
+};        
 
 
 
@@ -71,8 +72,8 @@ export const renderEditForm = async (req, res) => {
 export const stockUpdate = async (req,res)=>{
     const { stock } = req.body;
     await Note.findByIdAndUpdate(req.params.id, { stock }).lean();
-    // req.flash('success_msg','Nota actualizada satisfactoriamente');
-    // res.redirect('/notes')  
+    req.flash('success_msg','Stock updated');
+     res.redirect('/stock')  
 };
 
 
@@ -80,13 +81,13 @@ export const stockUpdate = async (req,res)=>{
 export const updateNote = async ( req, res ) => {
     const { category, brand, object, stock, minStock, dateOff, description } = req.body; 
     await Note.findByIdAndUpdate(req.params.id, { category, brand, object, stock, minStock, dateOff, description }).lean();
-    req.flash("sucess_msg", "Producto actualizado");
+    req.flash("sucess_msg", "Product updated");
     res.redirect('/stock');
 };
 
 export const deleteNote = async (req, res) =>{
     await Note.findByIdAndDelete(req.params.id).lean(); 
-    req.flash("sucess_msg", "Producto eliminado exitosamente"); 
+    req.flash("sucess_msg", "Product deleted"); 
     res.redirect("/stock");
 };
 
