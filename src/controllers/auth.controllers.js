@@ -30,7 +30,6 @@ export const signup = async (req,res) => {
         req.flash("error_msg", "The e-mail it's on use.");
         return res.redirect("/auth/signup");
     }
-
     // Saving a New user
     const newUser = new User({ name, email, password }); 
     newUser.password = await newUser.encryptPassword(password);

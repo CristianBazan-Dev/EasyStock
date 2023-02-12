@@ -13,7 +13,7 @@ passport.use(
     const user = await User.findOne({ email: email });
     
     if(!user){
-        return done(null, false, { message: 'Usuario no encontrado.'}); 
+        return done(null, false, { message: 'User not found.'}); 
     }
     
     // Match Password's User
